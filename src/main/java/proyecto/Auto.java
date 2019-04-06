@@ -16,6 +16,7 @@ public class Auto {
 	}
 	
 	public void detener() {
+		this.aumentarTemperatura(0.04 * velocidad);
 		velocidad = 0;
 	}
 	
