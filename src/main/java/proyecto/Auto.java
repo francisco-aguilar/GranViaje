@@ -6,41 +6,40 @@ public class Auto {
 	double temperatura;
 	int velocidad;
 	int combustible = capacidadCombustible;
+	Estado estado;
 	
 	public Auto(int capacidadCombustible) {
 		this.capacidadCombustible = capacidadCombustible;
+	}
+	
+	public void encender() {
+		estado.encender(this);
+	}
+	
+	public void apagar() {
+		estado.apagar(this);
+	}
+	
+	public void acelerar(int aceleracion) {
+		estado.acelerar(this, aceleracion);
+	}
+	
+	public void detener() {
+		estado.detener(this);
+	}
+	
+	public int getCombustible() {
+		return combustible;
 	}
 	
 	public double getTemperatura() {
 		return temperatura;
 	}
 	
-	public void detener() {
-		this.aumentarTemperatura(0.04 * velocidad);
-		velocidad = 0;
-	}
-	
-	public void acelerar(int aceleracion) {
-		velocidad += aceleracion;
-		this.aumentarTemperatura(0.02 * aceleracion);
-	}
-	
-	public void encender() {
-		encendido = true;
-		this.aumentarTemperatura(70);
-		this.consumirCombustible(0.001 * combustible);
-	}
-	
-	public void apagar() {
-		encendido = false;
-		temperatura = 0;
-	}
-	
 	public void aumentarTemperatura(double aumento) {
 		temperatura += aumento;
 	}
 
-	
 	public void consumirCombustible(double consumo) {
 		combustible -= consumo;
 	}
