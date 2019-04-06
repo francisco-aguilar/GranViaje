@@ -28,7 +28,7 @@ public class Auto {
 	public void encender() {
 		encendido = true;
 		this.aumentarTemperatura(70);
-		this.consumirCombustible(0.001);
+		this.consumirCombustible(0.001 * combustible);
 	}
 	
 	public void apagar() {
@@ -39,9 +39,10 @@ public class Auto {
 	public void aumentarTemperatura(double aumento) {
 		temperatura += aumento;
 	}
+
 	
 	public void consumirCombustible(double consumo) {
-		combustible -= consumo * combustible;
+		combustible -= consumo;
 	}
 	
 	public double porcentajeCombustibleActual() {
@@ -60,6 +61,10 @@ public class Auto {
 	
 	public boolean estaCaliente() {
 		return temperatura >= 95;
+	}
+	
+	public void recorrer(int distancia) {
+		consumirCombustible(distancia * 133);
 	}
 	
 }
