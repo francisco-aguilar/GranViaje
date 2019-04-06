@@ -1,3 +1,2 @@
 # GranViaje
-dkjasghfsd
-AAAAAAAAAAAAAAAAAA
+Clase GIT/Maven/Java8
