@@ -1,10 +1,23 @@
 package proyecto;
 
 public class Auto {
-	int nafta;
+	int combustible;
 	boolean encendido;
+	double temperatura;
 	
-	public int getNafta() {
-		return nafta;
+	public Auto(int combustible) {
+		this.combustible = combustible;
 	}
+	
+	public void encender() {
+		encendido = true;
+	}
+	
+	public void apagar() {
+		encendido = false;
+		temperatura = 0;
+	}
+	
+	
+	
 }
