@@ -19,9 +19,15 @@ public class Auto {
 		velocidad = 0;
 	}
 	
+	public void acelerar(int aceleracion) {
+		velocidad += aceleracion;
+		this.aumentarTemperatura(0.02 * aceleracion);
+	}
+	
 	public void encender() {
 		encendido = true;
 		this.aumentarTemperatura(70);
+		this.consumirCombustible(0.001);
 	}
 	
 	public void apagar() {
@@ -41,6 +47,18 @@ public class Auto {
 		return combustible * 100 / capacidadCombustible;
 	}
 	
+	/*
+	public boolean estaEnReserva() {
+		return this.porcentajeCombustibleActual() < 10;
+	}
 	
+	public boolean estaProximoAReserva() {
+		return this.porcentajeCombustibleActual() < 15;
+	}
+	*/
+	
+	public boolean estaCaliente() {
+		return temperatura >= 95;
+	}
 	
 }
