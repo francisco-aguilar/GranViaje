@@ -5,6 +5,7 @@ public class Apagado implements Estado{
 	public void encender(Auto unAuto) {
 		unAuto.aumentarTemperatura(70);
 		unAuto.consumirCombustible(0.001 * unAuto.getCombustible());
+		//super.setEstado()
 	}
 	
 	@Override
